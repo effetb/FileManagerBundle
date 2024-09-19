@@ -213,7 +213,7 @@ $(function () {
             const hostname = location.hostname;
             const params = new URLSearchParams(document.location.search);
             const confType = params.get("conf");
-            const path = confType;
+            const path = params.get('extra[path]');
             let url = "https://" + hostname + "/inline-file/path-name-/var/platforms/" + hostname + "/files/" + confType;
             if (path)
                 url += "/" + path;
