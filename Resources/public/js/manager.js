@@ -252,7 +252,10 @@ $(function ()
 			const params   = new URLSearchParams(document.location.search);
 			const confType = params.get("conf");
 			const path     = confType;
-			let url        = "https://" + hostname + "/inline-file/path-name-/var/platforms/" + hostname + "/files/" + confType + "/" + $(this).attr("data-value") + "/original-name-" + $(this).attr("data-value");
+			let url = "https://" + hostname + "/inline-file/path-name-/var/platforms/" + hostname + "/files/" + confType;
+			if (path)
+				url += "/path";
+			url += "/" + $(this).attr("data-value") + "/original-name-" + $(this).attr("data-value");
 			top.postMessage({ "filevalue" : url }, "*");
 		});
 	}
