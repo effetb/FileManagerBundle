@@ -214,7 +214,10 @@ $(function () {
             const params = new URLSearchParams(document.location.search);
             const confType = params.get("conf");
             const path = params.get('extra[path]');
+            const subject = params.get('extra[subject]');
             let url = "https://" + hostname + "/inline-file/path-name-/var/platforms/" + hostname + "/files/" + confType;
+            if (subject)
+                url += "/" + subject;
             if (path)
                 url += "/" + path;
             url += "/" + $(this).attr("data-value") + "/original-name-" + $(this).attr("data-value");
