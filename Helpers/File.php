@@ -59,6 +59,15 @@ class File
             if ('file' === $this->file->getType()) {
                 $attr .= "data-path=\"{$this->getPreview()['path']}\"";
                 $attr .= ' class="select"';
+
+                if ($this->file->getPathname())
+                {
+                    $conf = $this->fileManager->getQueryParameters()['conf'] . '/';
+                    $split = explode($conf, $this->file->getPath());
+                    if (count($split) > 2) {
+                        $attr .= ' data-folder="'.$split[2].'"';
+                    }
+                }
             }
 
             return $attr;

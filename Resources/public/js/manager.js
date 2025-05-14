@@ -215,11 +215,14 @@ $(function () {
             const confType = params.get("conf");
             const path = params.get('extra[path]');
             const subject = params.get('extra[subject]');
+            const folder = $(this).attr("data-folder");
             let url = "https://" + hostname + "/inline-file/path-name-/var/platforms/" + hostname + "/files/" + confType;
             if (subject)
                 url += "/" + subject;
             if (path)
                 url += "/" + path;
+            if (folder)
+                url += "/" + folder;
             url += "/" + $(this).attr("data-value") + "/original-name-" + $(this).attr("data-value");
             top.postMessage({"filevalue": url}, "*");
         });
