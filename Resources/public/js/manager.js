@@ -207,6 +207,7 @@ $(function () {
         });
     }
 
+
     // Module Tiny with api distant server
     if (moduleName === "tinymce-api") {
         $("#form-multiple-delete").on("click", ".select", function () {
