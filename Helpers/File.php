@@ -64,11 +64,8 @@ class File
                 $attr .= "data-path=\"{$this->getPreview()['path']}\"";
                 $attr .= ' class="select"';
 
-                if ($this->file->getPathname()) {
-                    $route = ltrim($this->fileManager->getRoute(), '/');
-                    if ($route) {
-                        $attr .= ' data-folder="' . $route . '"';
-                    }
+                if ($this->file->getPathname() && $this->fileManager->getRoute()) {
+                    $attr .= ' data-folder="' . ltrim($this->fileManager->getRoute(), '/') . '"';
                 }
             }
 
