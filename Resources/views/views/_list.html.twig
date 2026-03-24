@@ -1,14 +1,5 @@
 <div class="table-responsive list-blk">
     <table class="table">
-        <colgroup>
-            <col>
-            <col>
-            <col class="col-lg-7">
-            <col class="col-lg-1">
-            <col class="col-lg-1">
-            <col class="col-lg-1">
-            <col class="col-lg-2">
-        </colgroup>
         <thead class="thead-default">
         <tr>
             <th>
@@ -71,7 +62,7 @@
                     {% block file_action %}
                         <span data-toggle="tooltip" title="{{ 'title.delete'|trans }}">
                         <button type="button"
-                                class="btn btn-xs btn-danger js-delete-modal"
+                                class="btn btn-sm btn-danger js-delete-modal"
                                 data-trigger="click"
                                 data-container="body"
                                 data-toggle="modal"
@@ -84,7 +75,7 @@
                     </span>
                         <span data-toggle="tooltip" title="{{ 'title.rename.file'|trans }}">
                         <button type="button"
-                                class="btn btn-xs btn-default js-rename-modal"
+                                class="btn btn-sm btn-primary js-rename-modal"
                                 data-trigger="click"
                                 data-container="body"
                                 data-toggle="modal"
@@ -99,7 +90,7 @@
                     </span>
                         {% if file.type == "file" %}
                             <a data-placement="left" title="{{ 'title.download'|trans }}"
-                               class="btn btn-xs btn-default js-download"
+                               class="btn btn-sm btn-primary js-download"
                                href="{{ path('file_manager_file', fileManager.queryParameters|merge({'fileName':file.fileName})) }}"
                                download="{{ file.basename() }}">
                                 <span class="fas fa-download"></span>
@@ -107,7 +98,7 @@
                             {% if fileEntity.isImage() %}
                                 <span data-toggle="tooltip" title="{{ 'title.preview.file'|trans }}">
                                 <button type="button"
-                                        class="btn btn-xs btn-default js-open-modal"
+                                        class="btn btn-sm btn-primary js-open-modal"
                                         data-trigger="click"
                                         data-container="body"
                                         data-toggle="modal"
