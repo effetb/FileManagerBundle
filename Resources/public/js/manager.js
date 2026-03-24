@@ -218,13 +218,14 @@ $(function () {
             const subject = params.get('extra[subject]');
             const folder = $(this).attr("data-folder");
             let url = "https://" + hostname + "/inline-file/path-name-/var/platforms/" + hostname + "/files/" + confType;
+            const fileName = encodeURIComponent($(this).attr("data-value"));
             if (subject)
                 url += "/" + subject;
             if (path)
                 url += "/" + path;
             if (folder)
                 url += "/" + folder;
-            url += "/" + $(this).attr("data-value") + "/original-name-" + $(this).attr("data-value");
+            url += "/" + fileName + "/original-name-" + fileName;
             top.postMessage({"filevalue": url}, "*");
         });
     }
